@@ -114,7 +114,8 @@
             var ts = m.createdDate;
             if (state.lastSeen && ts <= state.lastSeen) return;
             if (m.direction === 'BUSINESS_TO_PARTICIPANT') {
-              addMsg((m.content && m.content.preview && m.content.preview.text) || '', false);
+              var item = m.content && m.content.basic && m.content.basic.items && m.content.basic.items[0];
+              addMsg((item && item.text) || '', false);
             }
             state.lastSeen = ts;
           });
