@@ -65,7 +65,7 @@
   }
 
   function startChat() {
-    var name = panel.querySelector('#wx-chat-name').value.trim() || 'Website Visitor';
+    var name = panel.querySelector('#wx-chat-name').value.trim();
     panel.querySelector('#wx-chat-start').innerHTML = '<p style="font-size:13px;color:#4A5A6A;text-align:center;margin:0;">' + T.connecting + '</p>';
     fetch(API_BASE + '?action=start', {
       method: 'POST',
